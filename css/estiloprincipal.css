@@ -101,4 +101,210 @@ nav ul li {
     margin: 20px; /* Espacio entre botones */
 }
 
+/* 🔹 Estilo tipo polaroid */
+.polaroid {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 10px 40px 10px; /* más espacio abajo para el borde inferior */
+    width: 400px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    margin: 20px 0 20px 20px; /* margen superior, inferior y a la izquierda */
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Borde más grueso abajo */
+.polaroid::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;              
+    background-color: white;    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 15px #e9dd54; /* resplandor más fuerte */
+}
+
+.polaroid img {
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.polaroid p {
+    margin: 10px 0 0 0;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover efecto */
+.polaroid:hover {
+    transform: scale(1.05);
+}
+
+
+.fotoprincipal {
+    /* Contenedor de la imagen de portada */
+    width: 100%;       /* ancho completo */
+    overflow: hidden;  /* recorta cualquier exceso */
+}
+
+/* Imagen de portada */
+.fotoprincipal img {
+    width: 100%;       /* ocupa todo el ancho */
+    height: auto;      /* mantiene proporción */
+    display: block;    /* elimina espacio en línea */
+}
+
+.temporada.destacada {
+    background-color: rgba(0, 0, 0, 0.7); /* recuadro oscuro semitransparente */
+    border: 2px solid #947327;           /* borde dorado */
+    border-radius: 15px;
+    padding: 20px 30px;                   /* más padding horizontal para texto ancho */
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center;      
+    color: white;            
+    width: 80%;                          /* ahora ocupa el 80% del contenedor principal */
+    max-width: 600px;                    /* evita que sea demasiado grande en pantallas grandes */
+    margin: 0 auto 20px auto; 
+}
+
+.temporada.destacada .titulo {
+    color: white; 
+    background-color: rgba(148, 115, 39, 0.8); 
+    border: 2px solid #cab518;
+    border-radius: 10px;
+    padding: 10px 20px;                  /* más padding horizontal */
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.temporada.destacada img {
+    border-radius: 15px;
+    border: 3px solid #cab518; 
+    width: 100%;
+    max-width: 250px;
+}
+
+.descripcion-temporada {
+    margin-top: 10px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size:medium;
+}
+
+/* Contenedor de personaje tipo tarjeta */
+.personaje.tarjeta {
+    background-color: rgba(0,0,0,0.7);  /* fondo oscuro semitransparente */
+    border: 2px solid #947327;          /* borde dorado */
+    border-radius: 15px;
+    padding: 15px;
+    width: 250px;                        /* ancho fijo pero adaptado */
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.personaje.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen dentro de la tarjeta */
+.personaje.tarjeta img {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #cab518; /* borde dorado */
+}
+
+/* Nombre del personaje */
+.nombre-personaje {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Descripción debajo del nombre */
+.descripcion-personaje {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;           /* permite que baje a la siguiente fila */
+    gap: 20px;                 /* espacio entre tarjetas */
+    justify-content: center;   /* centra horizontalmente */
+    padding: 20px;
+}
+
+/* Cada tarjeta */
+.personaje.tarjeta {
+    width: 25%;                /* ocupa un tercio del contenedor principal */
+    min-width: 5px;          /* evita que sean demasiado pequeñas en pantallas grandes */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    border: 3px solid #947327;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+/* --- tu CSS actual arriba --- */
+
+
+/* --- Media queries al final --- */
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .personaje.tarjeta {
+    width: 40%;
+  }
+
+  .temporada {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .personaje.tarjeta,
+  .temporada {
+    width: 90%;
+  }
+
+  .temporada.destacada {
+    width: 95%;
+  }
+}
 
