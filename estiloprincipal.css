@@ -24,6 +24,10 @@ body {
 /* ------ HEADER ----- */
 
 header {
+    display: flex;
+    position:sticky;
+    top: 0;
+    z-index: 1000;
     background: linear-gradient(90deg, #f78fb3, #a04965);
     padding: 25px;
     text-align: center;
